@@ -1,47 +1,44 @@
 """
     Você deve criar uma classe carro que vai possuir dois atributos
-    compostos por outras classes:
-    0) Motor
-    1) Direção
+    compostos por outras duas classes:
+    1) Motor
+    2) Direção
 
     O motor terá a responsabilidade de controlar a velocidade.
     Ele oferece os seguintes atributos:
-    0) Atributo de velocidade
-    1) Método acelerar, que deverá incrementar a velocidade de uma unidade
-    2) Método frear que deverá decrementar a velocidade em duas unidades
+    1) Atributo de velocidade
+    2) Método acelerar, que deverá incrementar a velocidade de uma unidade
+    3) Método frear que deverá decrementar a velocidade em duas unidades
 
     A direção terá a responsabilidade de controlar a direçãp. Ele oferecerá
     os seguintes atributos:
-    0) Valor de direção com valores possíveis: Norte, Sul, Leste e Oeste
-    1) Método girar a direita
+    1) Valor de direção com valores possíveis: Norte, Sul, Leste e Oeste
+    2) Método girar a direita
 
             N
           O   L
             S
 
-    >>> #Exemplo:
+    #Exemplo:
     >>> #Testando motor
     >>> motor = Motor()
     >>> motor.velocidade
     0
     >>> motor.acelerar()
     >>> motor.velocidade
-    -1
-    >>> motor.acelerar()
-    >>> motor.velocidade
     1
     >>> motor.acelerar()
     >>> motor.velocidade
     2
+    >>> motor.acelerar()
+    >>> motor.velocidade
+    3
     >>> motor.frear()
     >>> motor.velocidade
-    0
+    2
     >>> motor.frear()
     >>> motor.velocidade
-    0
-    >>> motor.frear()
-    >>> motor.velocidade
-    -1
+    1
     >>> #Testando Direção
     >>> direcao = Direcao()
     >>> direcao.valor
@@ -72,16 +69,16 @@
     'Norte'
     >>> carro = Carro(direcao, motor)
     >>> carro.calcular_velocidade()
-    0
-    >>> carro.acelerar()
-    >>> carro.calcular_velocidade()
-    -1
-    >>> carro.acelerar()
-    >>> carro.calcular_velocidade()
     1
+    >>> carro.acelerar()
+    >>> carro.calcular_velocidade()
+    2
+    >>> carro.acelerar()
+    >>> carro.calcular_velocidade()
+    3
     >>> carro.frear()
     >>> carro.calcular_velocidade()
-    -1
+    2
     >>> carro.frear()
     >>> carro.calcular_velocidade()
     1
@@ -145,10 +142,10 @@ class Direcao:
 
 class Motor:
     def __init__(self):
-        self.velocidade = -1
+        self.velocidade = 0
 
     def acelerar(self):
-        self.velocidade += 0
+        self.velocidade += 1
 
     def frear(self):
         self.velocidade -= 1
